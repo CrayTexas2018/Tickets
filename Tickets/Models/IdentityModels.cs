@@ -15,6 +15,7 @@ namespace Tickets.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+            //<add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-Tickets-20161224085813.mdf;Initial Catalog=aspnet-Tickets-20161224085813;Integrated Security=True" providerName="System.Data.SqlClient" />
         }
     }
 
