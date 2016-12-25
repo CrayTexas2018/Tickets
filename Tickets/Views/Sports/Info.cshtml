@@ -1,0 +1,43 @@
+﻿@model Tickets.Models.SportViewModel
+@using Tickets.Models
+
+@{
+    ViewBag.Title = Model.sport.name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.sport.name</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>Current Price</th>
+            <th>Buy Now</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model.teams)
+        {
+            <tr>
+                <td>@t.team_name</td>
+                @foreach (var p in Model.prices)
+                {
+                    if (p.team_id == t.team_id)
+                    {
+                        <td>@p.price.ToString("0.00")</td>
+                    }
+                }
+                <td><a href="#" class="button success">Buy Now</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="small-10 columns small-offset-1" style="background-color:#4d4d4d; border-radius:7px;">
+    @foreach (var c in Model.content)
+    {
+        <h3>@c.head</h3>
+        <p>@c.body</p>
+    }
+</div>
