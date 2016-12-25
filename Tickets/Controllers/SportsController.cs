@@ -20,6 +20,7 @@ namespace Tickets.Controllers
                 Sport s = db.Database.SqlQuery<Sport>("EXEC GetSportData @p0", sport).Single();
 
                 // Get content and prices for that sport ID
+                
 
             }
             catch
