@@ -64,6 +64,8 @@ namespace Tickets.Models
 
         public string team_name { get; set; }
 
+        public string logo_url { get; set; }
+
         public bool active { get; set; }
 
         public DateTime created { get; set; }
